@@ -14,9 +14,16 @@ git push -u origin main
 ```
 
 ### 2. Deploy to Vercel
+**Option A: Connect GitHub Account** (Recommended - enables auto-deployments)
 1. Go to [vercel.com](https://vercel.com) → Sign up with GitHub
-2. Click "Add New Project" → Import your repository
+2. Click "Add New Project" → Select your repository from the list
 3. Click "Deploy" (uses defaults)
+
+**Option B: Manual Import** (No GitHub connection needed)
+1. Go to [vercel.com](https://vercel.com) → Sign up
+2. Click "Add New Project" → "Import Git Repository"
+3. Enter your GitHub repo URL: `https://github.com/yourusername/stepladder`
+4. Click "Continue" → "Deploy"
 
 ### 3. Add Environment Variables
 In Vercel Dashboard → Your Project → Settings → Environment Variables:
