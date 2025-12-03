@@ -4,6 +4,7 @@ import React from 'react';
 import { KpiCard } from '../KpiCard';
 import { HomeworkActivityChart } from '../HomeworkActivityChart';
 import { ModalitySnapshot } from '../ModalitySnapshot';
+import { WorksheetType } from '@/config/worksheetDefinitions';
 
 interface KpiData {
   clientsWithActiveHomework: number;
@@ -21,7 +22,7 @@ interface ChartDataPoint {
 interface ModalityData {
   label: string;
   detail: string;
-  worksheetType?: string;
+  worksheetType?: WorksheetType;
 }
 
 interface AnalyticsOverviewProps {

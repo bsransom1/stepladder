@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
-import { authenticateRequest, unauthorizedResponse } from '../../../../../../middleware';
+import { authenticateRequest, unauthorizedResponse } from '@/app/api/middleware';
 import { WORKSHEET_DEFINITIONS, WorksheetType } from '@/config/worksheetDefinitions';
 import { sendEmail, generateWorksheetEmailHTML } from '@/lib/email';
 import { subDays } from 'date-fns';
@@ -9,12 +9,11 @@ export async function POST(
   request: NextRequest,
   { params }: { params: { clientId: string; worksheetType: string } }
 ) {
+  const { clientId, worksheetType } = params;
   console.log('📧 Email endpoint called:', { clientId, worksheetType });
   
   const auth = await authenticateRequest(request);
   if (!auth) return unauthorizedResponse();
-
-  const { clientId, worksheetType } = params;
 
   try {
     console.log('📧 Processing email request for worksheet type:', worksheetType);

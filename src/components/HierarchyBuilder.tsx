@@ -6,9 +6,17 @@ import { Input } from './Input';
 import { getAuthHeaders } from '@/lib/auth-client';
 import { ERPHierarchyItem } from '@/types';
 
+interface HierarchyItemWithMetrics extends ERPHierarchyItem {
+  metrics?: {
+    runs_completed: number;
+    avg_suds_before: number;
+    avg_suds_after: number;
+  };
+}
+
 interface HierarchyBuilderProps {
   clientId: string;
-  items: ERPHierarchyItem[];
+  items: HierarchyItemWithMetrics[];
   onUpdate: () => void;
 }
 
