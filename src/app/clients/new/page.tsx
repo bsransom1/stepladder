@@ -157,7 +157,7 @@ export default function NewClientPage() {
   return (
     <TherapistLayout>
       <div className="p-8 max-w-2xl mx-auto">
-        <h1 className="text-2xl md:text-3xl font-semibold text-step-text-main tracking-tight mb-6">Add New Client</h1>
+        <h1 className="text-2xl md:text-3xl font-semibold text-step-text-main dark:text-step-dark-text-main tracking-tight mb-6">Add New Client</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
             <div className="bg-step-status-danger-bg dark:bg-step-status-danger-bgDark border border-step-status-danger-text/20 dark:border-step-status-danger-textDark/30 text-step-status-danger-text dark:text-step-status-danger-textDark px-4 py-3 rounded-lg transition-colors duration-200">
@@ -215,11 +215,11 @@ export default function NewClientPage() {
                     setConfigValues({});
                   }
                 }}
-                className="h-4 w-4 text-step-primary-600 focus:ring-step-primary-500 border-step-border rounded"
+                className="h-4 w-4 text-step-primary-600 focus:ring-step-primary-500 border-step-border dark:border-step-dark-border rounded bg-step-surface dark:bg-step-dark-surface"
               />
             </div>
             <div className="ml-3 text-sm">
-              <label className="font-medium text-step-text-main">
+              <label className="font-medium text-step-text-main dark:text-step-dark-text-main">
                 Just create client (don't send worksheet yet)
               </label>
             </div>
@@ -240,7 +240,7 @@ export default function NewClientPage() {
                     setSelectedWorksheetId('');
                     setConfigValues({});
                   }}
-                  className="w-full px-4 py-2 border border-step-border rounded-lg focus:outline-none focus:ring-2 focus:ring-step-primary-500 text-sm md:text-[15px] text-step-text-main bg-step-surface"
+                  className="worksheet-select w-full px-4 py-2 border border-step-border dark:border-step-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-step-primary-500 text-sm md:text-[15px] text-step-text-main dark:text-step-dark-text-main bg-step-surface dark:bg-step-dark-surface transition-colors duration-200"
                   required={!justCreateClient}
                 >
                   <option value="CBT">CBT</option>
@@ -270,7 +270,7 @@ export default function NewClientPage() {
                   </div>
 
                   {/* Inline Configuration Form */}
-                  <div className="border border-step-border rounded-lg p-6 bg-step-surface mb-4" data-config-section>
+                  <div className="border border-step-border dark:border-step-dark-border rounded-lg p-6 bg-step-surface dark:bg-step-dark-surface mb-4 transition-colors duration-200" data-config-section>
                       <div className="space-y-4">
                         {/* Worksheet Selection */}
                         <div>
@@ -326,7 +326,7 @@ export default function NewClientPage() {
                                 }
                               }
                             }}
-                            className="w-full px-4 py-2 border border-step-border rounded-lg focus:outline-none focus:ring-2 focus:ring-step-primary-500 text-sm md:text-[15px] text-step-text-main bg-step-bg"
+                            className="worksheet-select w-full px-4 py-2 border border-step-border dark:border-step-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-step-primary-500 text-sm md:text-[15px] text-step-text-main dark:text-step-dark-text-main bg-step-surface dark:bg-step-dark-surface transition-colors duration-200"
                           >
                             <option value="">Select a worksheet...</option>
                             {(worksheetsByModality[primaryModality] ?? []).map((worksheet) => (
@@ -415,7 +415,7 @@ export default function NewClientPage() {
 
                   {/* Pending Assignments List */}
                   {pendingAssignments.length > 0 && (
-                    <div className="space-y-3 border border-step-border rounded-lg p-4 bg-step-surface">
+                    <div className="space-y-3 border border-step-border dark:border-step-dark-border rounded-lg p-4 bg-step-surface dark:bg-step-dark-surface transition-colors duration-200">
                       {pendingAssignments.map((pending, index) => {
                         const configuredFieldsCount = Object.keys(
                           pending.clinicianConfigValues

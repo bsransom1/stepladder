@@ -170,14 +170,14 @@ export default function NewWorksheetPage() {
                 setModality(e.target.value as ModalityKey);
                 setSelectedWorksheetId('');
               }}
-              className="w-full px-4 py-2 border border-step-border rounded-lg focus:outline-none focus:ring-2 focus:ring-step-primary-500 text-sm md:text-[15px] text-step-text-main bg-step-surface"
+              className="worksheet-select w-full px-4 py-2 border border-step-border dark:border-step-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-step-primary-500 text-sm md:text-[15px] text-step-text-main dark:text-step-dark-text-main transition-colors duration-200"
               required
             >
-              <option value="CBT">CBT</option>
-              <option value="ERP">ERP</option>
-              <option value="DBT">DBT</option>
-              <option value="CBT-J">CBT-J</option>
-              <option value="SUD">SUD</option>
+              <option value="CBT" className="bg-step-surface dark:bg-step-dark-surface text-step-text-main dark:text-step-dark-text-main">CBT</option>
+              <option value="ERP" className="bg-step-surface dark:bg-step-dark-surface text-step-text-main dark:text-step-dark-text-main">ERP</option>
+              <option value="DBT" className="bg-step-surface dark:bg-step-dark-surface text-step-text-main dark:text-step-dark-text-main">DBT</option>
+              <option value="CBT-J" className="bg-step-surface dark:bg-step-dark-surface text-step-text-main dark:text-step-dark-text-main">CBT-J</option>
+              <option value="SUD" className="bg-step-surface dark:bg-step-dark-surface text-step-text-main dark:text-step-dark-text-main">SUD</option>
             </select>
           </div>
 
@@ -194,12 +194,12 @@ export default function NewWorksheetPage() {
                 <select
                   value={selectedWorksheetId}
                   onChange={(e) => setSelectedWorksheetId(e.target.value)}
-                  className="w-full px-4 py-2 border border-step-border rounded-lg focus:outline-none focus:ring-2 focus:ring-step-primary-500 text-sm md:text-[15px] text-step-text-main bg-step-surface"
+                  className="worksheet-select w-full px-4 py-2 border border-step-border dark:border-step-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-step-primary-500 text-sm md:text-[15px] text-step-text-main dark:text-step-dark-text-main transition-colors duration-200"
                   required
                 >
-                  <option value="">Select a worksheet...</option>
+                  <option value="" className="bg-step-surface dark:bg-step-dark-surface text-step-text-main dark:text-step-dark-text-main">Select a worksheet...</option>
                   {availableWorksheets.map((worksheet) => (
-                    <option key={worksheet.id} value={worksheet.id}>
+                    <option key={worksheet.id} value={worksheet.id} className="bg-step-surface dark:bg-step-dark-surface text-step-text-main dark:text-step-dark-text-main">
                       {worksheet.title}
                       {worksheet.problemDomains.length > 0 && ` (${worksheet.problemDomains.join(', ')})`}
                     </option>

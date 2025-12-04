@@ -275,3 +275,94 @@ p, .text-body {
   }
 }
 
+/* Force dark mode styling for select elements - outside layer for higher specificity */
+/* Use attribute selector to ensure highest specificity */
+html.dark select,
+html.dark select.worksheet-select {
+  background-color: #1E293B !important;
+  background-image: none !important;
+  color: #F1F5F9 !important;
+  border-color: #334155 !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+html.dark select:focus,
+html.dark select.worksheet-select:focus {
+  background-color: #1E293B !important;
+  background-image: none !important;
+  color: #F1F5F9 !important;
+  border-color: #334155 !important;
+}
+
+html.dark select option,
+html.dark select.worksheet-select option {
+  background-color: #1E293B !important;
+  color: #F1F5F9 !important;
+}
+
+/* Fallback for browsers that don't support appearance-none */
+html.dark select::-ms-expand {
+  display: none;
+}
+
+/* Add dropdown arrow back since we removed native appearance */
+html.dark select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394A3B8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
+  background-position: right 0.5rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.5em 1.5em !important;
+  padding-right: 2.5rem !important;
+}
+
+/* Force dark mode styling for input elements */
+html.dark input,
+html.dark input[type="text"],
+html.dark input[type="email"],
+html.dark input[type="password"],
+html.dark input[type="date"],
+html.dark input[type="number"],
+html.dark input[type="search"],
+html.dark input[type="tel"],
+html.dark input[type="url"] {
+  background-color: #1E293B !important;
+  color: #F1F5F9 !important;
+  border-color: #334155 !important;
+}
+
+html.dark input:focus,
+html.dark input[type="text"]:focus,
+html.dark input[type="email"]:focus,
+html.dark input[type="password"]:focus,
+html.dark input[type="date"]:focus,
+html.dark input[type="number"]:focus {
+  background-color: #1E293B !important;
+  color: #F1F5F9 !important;
+  border-color: #334155 !important;
+}
+
+/* Date input calendar icon styling */
+html.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Force dark mode styling for textarea elements */
+html.dark textarea {
+  background-color: #1E293B !important;
+  color: #F1F5F9 !important;
+  border-color: #334155 !important;
+}
+
+html.dark textarea:focus {
+  background-color: #1E293B !important;
+  color: #F1F5F9 !important;
+  border-color: #334155 !important;
+}
+
+/* Placeholder text in dark mode */
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
